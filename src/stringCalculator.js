@@ -3,7 +3,11 @@ class stringCalculator {
     if (numbers === "") {
       return 0;
     }
-    return parseInt(numbers);
+    const sum = numbers
+      ?.split(",")
+      ?.map((num) => parseInt(num))
+      ?.reduce((sum, num) => sum + num, 0);
+    return sum;
   }
 }
 
