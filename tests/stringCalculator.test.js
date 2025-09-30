@@ -34,3 +34,8 @@ test("throws error for negative numbers", () => {
     calc.add("1,-2,3,-4,5,-6");
   }).toThrow("negative numbers not allowed: -2, -4, -6");
 });
+
+test("returns sum of all numbers smaller than or equal to 1000", () => {
+  expect(calc.add("1000,2")).toBe(1002);
+  expect(calc.add("2,1001")).toBe(2);
+});
