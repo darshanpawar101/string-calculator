@@ -13,12 +13,15 @@ class stringCalculator {
       numbers = parts[1];
     }
 
-    const sum = numbers
-      ?.split(delimiterRegex)
-      ?.map((num) => parseInt(num))
-      ?.reduce((sum, num) => sum + num, 0);
+    const nums = numbers?.split(delimiterRegex)?.map((num) => parseInt(num));
 
-    return sum;
+    const negativeNumbers = nums?.filter((num) => num < 0);
+    if (negativeNumbers?.length > 0) {
+      throw new Error(
+        `negative numbers not allowed: ${negativeNumbers.join(", ")}`
+      );
+    }
+    return nums?.reduce((sum, num) => sum + num, 0);
   }
 }
 
