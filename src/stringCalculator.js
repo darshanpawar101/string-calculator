@@ -3,11 +3,21 @@ class stringCalculator {
     if (numbers === "") {
       return 0;
     }
-    const separatorRegex = /,|\n/;
+
+    let delimiterRegex = /,|\n/;
+
+    if (numbers.startsWith("//")) {
+      const parts = numbers?.split("\n");
+      const customDelimiter = parts[0].substring(2);
+      delimiterRegex = new RegExp(customDelimiter);
+      numbers = parts[1];
+    }
+
     const sum = numbers
-      ?.split(separatorRegex)
+      ?.split(delimiterRegex)
       ?.map((num) => parseInt(num))
       ?.reduce((sum, num) => sum + num, 0);
+
     return sum;
   }
 }
