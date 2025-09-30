@@ -24,3 +24,7 @@ test("returns sum of all numbers separated by commas", () => {
 test("returns sum of all numbers separated by new lines and commas", () => {
   expect(calc.add("1\n2,3\n4,5\n6")).toBe(21);
 });
+
+test("returns sum of all numbers separated by custom delimiter", () => {
+  expect(calc.add("//;\n1;2;3;4;5;6")).toBe(21);
+});
