@@ -1,9 +1,9 @@
 class stringCalculator {
-    add(numbers){
-        if(numbers === ""){
-            return 0
-        }
+  add(numbers) {
+    if (numbers === "") {
+      return 0;
     }
+  }
 }
 
-module.exports = stringCalculator
+module.exports = stringCalculator;
