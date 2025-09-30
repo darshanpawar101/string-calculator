@@ -20,3 +20,7 @@ test("returns sum of two numbers separated by commas", () => {
 test("returns sum of all numbers separated by commas", () => {
   expect(calc.add("1,2,3,4,5,6")).toBe(21);
 });
+
+test("returns sum of all numbers separated by new lines and commas", () => {
+  expect(calc.add("1\n2,3\n4,5\n6")).toBe(21);
+});
