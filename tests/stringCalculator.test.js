@@ -16,3 +16,7 @@ test("returns number for single input", () => {
 test("returns sum of two numbers separated by commas", () => {
   expect(calc.add("1,2")).toBe(3);
 });
+
+test("returns sum of all numbers separated by commas", () => {
+  expect(calc.add("1,2,3,4,5,6")).toBe(21);
+});
