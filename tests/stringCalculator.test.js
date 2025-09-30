@@ -28,3 +28,9 @@ test("returns sum of all numbers separated by new lines and commas", () => {
 test("returns sum of all numbers separated by custom delimiter", () => {
   expect(calc.add("//;\n1;2;3;4;5;6")).toBe(21);
 });
+
+test("throws error for negative numbers", () => {
+  expect(() => {
+    calc.add("1,-2,3,-4,5,-6");
+  }).toThrow("negative numbers not allowed: -2, -4, -6");
+});
